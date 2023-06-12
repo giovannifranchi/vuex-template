@@ -1,8 +1,11 @@
 import { createStore } from "vuex";
 
+import User from "../../api/USer";
+
 const store =  createStore({
     state: {
         user: {
+            authtoken: null,
             username: null,
             role: null,
         },
@@ -32,12 +35,12 @@ const store =  createStore({
     actions: {
 
         async fecthUsername({commit}){
-            const response = await User
+            const response = await User.getUsername(this.state.user.authtoken);
             commit('setUsername', response);
         },
 
         async fetchRole({commit}){
-            const response = await Role;
+            const response = await User.getRole(this.state.user.authtoken);
             commit('setRole', response);
         }
 
