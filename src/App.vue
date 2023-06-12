@@ -9,7 +9,7 @@
 </script>
 
 <template>
-  <HelloApp/>
+  <RouterView/>
 </template>
 
 
