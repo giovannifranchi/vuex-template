@@ -20,7 +20,27 @@ library.add(fa5); //icons must be registered also here, remeber to use them in c
 createApp(App)
 .use(store)
 .use(router)
+.use(Toast, {position: POSITION.BOTTOM_RIGHT}) //can be called also from store actions :-)
 .component('font-awesome-icon', FontAwesomeIcon)
 .component('VueApexCharts', VueApexCharts)
-.use(Toast, {position: POSITION.BOTTOM_RIGHT}) //can be called also from store actions :-)
 .mount('#app')
+
+
+// NOTE: epic-spinner is inclueded in node modules as well find docs @ 'https://github.com/epicmaxco/epic-spinners'
+// It can be used directly from components and this is an example of usage:
+        
+        /* <template>
+          <div id="app">
+            <atom-spinner :animation-duration="1000" :size="60" color="#ff1d5e" />
+          </div>
+        </template>
+        
+        <script>
+        import { AtomSpinner } from 'epic-spinners'
+        
+        export default {
+          components: {
+            AtomSpinner,
+          },
+        }
+        </script> */
