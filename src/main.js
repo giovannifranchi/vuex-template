@@ -6,7 +6,9 @@ import router from './router/Router'
 
 //exetrnal components
 
-import VueApexCharts from 'vue3-apexcharts' //this is a library for charts, find docs @'https://apexcharts.com/docs/vue-charts/'...
+import VueApexCharts from 'vue3-apexcharts' //this is a library for charts, find docs @'https://apexcharts.com/docs/vue-charts/'!!
+import Toast, {POSITION} from "vue-toastification"; //this is a library for toasts, find docs @'https://github.com/Maronato/vue-toastification'!!
+import "vue-toastification/dist/index.css";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fa5 } from '@fortawesome/free-solid-svg-icons' //this is just an example, each new icon used needs to be registered here;
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -20,4 +22,5 @@ createApp(App)
 .use(router)
 .component('font-awesome-icon', FontAwesomeIcon)
 .component('VueApexCharts', VueApexCharts)
+.use(Toast, {position: POSITION.BOTTOM_RIGHT}) //can be called also from store actions :-)
 .mount('#app')
